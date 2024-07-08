@@ -1,0 +1,48 @@
+name: kafiil
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/svg/splash.svg
+    - assets/svg/Login-cuate1.svg
+    - assets/svg/registertion.svg
+    - assets/svg/muns.svg
+    - assets/svg/plus.svg
+    - assets/svg/facebook.svg
+    - assets/svg/twitter.svg
+    - assets/svg/linkedin.svg
+    - assets/svg/ShoppingCartSimple.svg
+    - assets/svg/UserCircle.svg
+    - assets/svg/GlobeHemisphereWest.svg
+    - assets/images/Vector.png
+    - assets/images/registertion.png
+    - assets/images/calendar.png
+    - assets/images/user.png
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-semiBold.ttf.
+        - asset: assets/fonts/Montserrat-Bold.ttf
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+        - asset: assets/fonts/Montserrat-ExtraLight.ttf
+        - asset: assets/fonts/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat-Medium.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-black.ttf
