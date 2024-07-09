@@ -97,13 +97,13 @@ class _CountriesPageState extends State<CountriesPage> {
                       children: [
                         // DataTable displaying the data
                         DataTable(
-                          horizontalMargin: 60,
-                          columnSpacing: 120,
+                          horizontalMargin: 70,
+                          columnSpacing: 100,
                           dataRowMaxHeight: 40,
                           dataRowMinHeight: 30,
                           columns: const [
-                            DataColumn(label: Text('Country')),
-                            DataColumn(label: Text('Capital')),
+                            DataColumn(label: Text('')),
+                            DataColumn(label: Text('')),
                           ],
                           rows: data
                               .skip(currentPage * rowsPerPage)
@@ -111,8 +111,18 @@ class _CountriesPageState extends State<CountriesPage> {
                               .map((item) {
                             return DataRow(
                               cells: [
-                                DataCell(Text(item['Country']!)),
-                                DataCell(Text(item['Capital']!)),
+                                DataCell(Text(
+                                  item['Country']!,
+                                  style: mediumMontserratStyle(
+                                      fontSize: FontSize.s10,
+                                      color: ColorManager.black),
+                                )),
+                                DataCell(Text(
+                                  item['Capital']!,
+                                  style: mediumMontserratStyle(
+                                      fontSize: FontSize.s10,
+                                      color: ColorManager.black),
+                                )),
                               ],
                             );
                           }).toList(),
@@ -243,10 +253,11 @@ class _CountriesPageState extends State<CountriesPage> {
                               },
                               child: Text(
                                 '${index + 1}',
-                                style: TextStyle(
+                                style: mediumMontserratStyle(
+                                    fontSize: FontSize.s16,
                                     color: currentPage == index
-                                        ? Colors.white
-                                        : Colors.black),
+                                        ? ColorManager.white
+                                        : ColorManager.black),
                               ),
                             ),
                           ),
