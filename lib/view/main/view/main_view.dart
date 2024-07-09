@@ -27,16 +27,19 @@ class MainScreenState extends State<MainScreen> {
     const ServicesPage()
   ];
 
-  _onPageChanged(int index) {
+  // Update the selected index on page change
+  void _onPageChanged(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
-  _onItemTapped(int index) {
+  // Navigate to the selected page
+  void _onItemTapped(int index) {
     _pageController.jumpToPage(index);
   }
 
+  // Build navigation bar item
   BottomNavigationBarItem _buildNavItem(
       String assetName, String label, int index) {
     return BottomNavigationBarItem(
@@ -54,37 +57,52 @@ class MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(_pageTitles[_selectedIndex],
-            style: semiBlodMontserrat(
-                fontSize: FontSize.s15, color: ColorManager.black)),
-      ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: _onPageChanged,
-        children: _pages,
-      ),
+      appBar: _buildAppBar(),
+      body: _buildPageView(),
       backgroundColor:
-          _selectedIndex == 1 ? ColorManager.background : ColorManager.white,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedLabelStyle: mediumMontserratStyle(
-          fontSize: FontSize.s10,
-          color: ColorManager.mainColor,
-        ),
-        unselectedLabelStyle: mediumMontserratStyle(
-          fontSize: FontSize.s10,
-          color: ColorManager.grey,
-        ),
-        selectedItemColor: ColorManager.mainColor,
-        items: <BottomNavigationBarItem>[
-          _buildNavItem(SvgAssets.user, 'Who Am I', 0),
-          _buildNavItem(SvgAssets.global, 'Countries', 1),
-          _buildNavItem(SvgAssets.shopingcart, 'Services', 2),
-        ],
+          _selectedIndex >= 1 ? ColorManager.background : ColorManager.white,
+      bottomNavigationBar: _buildBottomNavigationBar(),
+    );
+  }
+
+  // Build AppBar with dynamic title
+  AppBar _buildAppBar() {
+    return AppBar(
+      backgroundColor: ColorManager.white,
+      automaticallyImplyLeading: false,
+      title: Text(
+        _pageTitles[_selectedIndex],
+        style: semiBlodMontserrat(
+            fontSize: FontSize.s15, color: ColorManager.black),
       ),
+    );
+  }
+
+  // Build PageView with pages
+  PageView _buildPageView() {
+    return PageView(
+      controller: _pageController,
+      onPageChanged: _onPageChanged,
+      children: _pages,
+    );
+  }
+
+  // Build BottomNavigationBar
+  BottomNavigationBar _buildBottomNavigationBar() {
+    return BottomNavigationBar(
+      backgroundColor: ColorManager.white,
+      currentIndex: _selectedIndex,
+      onTap: _onItemTapped,
+      selectedLabelStyle: mediumMontserratStyle(
+          fontSize: FontSize.s10, color: ColorManager.mainColor),
+      unselectedLabelStyle: mediumMontserratStyle(
+          fontSize: FontSize.s10, color: ColorManager.grey),
+      selectedItemColor: ColorManager.mainColor,
+      items: [
+        _buildNavItem(SvgAssets.user, 'Who Am I', 0),
+        _buildNavItem(SvgAssets.global, 'Countries', 1),
+        _buildNavItem(SvgAssets.shopingcart, 'Services', 2),
+      ],
     );
   }
 }

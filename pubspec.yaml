@@ -30,10 +30,13 @@ flutter:
     - assets/svg/ShoppingCartSimple.svg
     - assets/svg/UserCircle.svg
     - assets/svg/GlobeHemisphereWest.svg
+    - assets/svg/Group.svg
+    - assets/svg/Star.svg
     - assets/images/Vector.png
     - assets/images/registertion.png
     - assets/images/calendar.png
     - assets/images/user.png
+    - assets/images/Productpic.png
 
   fonts:
     - family: Montserrat
