@@ -14,7 +14,7 @@ class SvgAssets {
   static const String login = "$svgpath/Login-cuate1.svg";
   static const String registertion = "$svgpath/registertion.svg";
   static const String plus = "$svgpath/plus.svg";
-  static const String muns = "$svgpath/muns.svg";
+  static const String minus = "$svgpath/muns.svg";
   static const String facebook = "$svgpath/facebook.svg";
   static const String twitter = "$svgpath/twitter.svg";
   static const String linkedin = "$svgpath/linkedin.svg";
@@ -23,4 +23,5 @@ class SvgAssets {
   static const String shopingcart = "$svgpath/ShoppingCartSimple.svg";
   static const String group = "$svgpath/Group.svg";
   static const String star = "$svgpath/Star.svg";
+  static const String error = "$svgpath/error.svg";
 }

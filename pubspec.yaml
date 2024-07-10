@@ -15,7 +15,22 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: "^0.13.1"
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/splash.png"
+  min_sdk_android: 21 # Android min SDK (default: 21)
+  background_color: "#1DBF73" # Set background color for Android
+  web:
+    generate: true
+    image_path: "assets/images/splash.png"
+    background_color: "#1DBF73"
+    theme_color: "#1DBF73"
+  macos:
+    generate: true
+    image_path: "assets/images/splash.png"
 flutter:
   uses-material-design: true
   assets:
@@ -32,6 +47,7 @@ flutter:
     - assets/svg/GlobeHemisphereWest.svg
     - assets/svg/Group.svg
     - assets/svg/Star.svg
+    - assets/svg/error.svg
     - assets/images/Vector.png
     - assets/images/registertion.png
     - assets/images/calendar.png

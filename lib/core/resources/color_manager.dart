@@ -8,7 +8,8 @@ class ColorManager {
   static const Color grey = Color(0xffA2A2A2);
   static const Color textgrey = Color(0xff9A9A9A);
   static const Color white = Color(0xffFFFFFF);
-  static const Color error = Color(0xffe61f34);
+  static const Color error = Color.fromARGB(255, 245, 99, 66);
+  static const Color errorbackground = Color.fromARGB(255, 255, 240, 237);
   static const Color blue = Color(0xff0D77E2);
   static const Color orange = Color(0xffFBB03B);
   static const Color purple = Color(0xffB13BFB);

@@ -82,24 +82,29 @@ class ServicesPage extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(ImageAssets.productpic),
-          Positioned(
-            bottom: 8,
-            right: 8,
-            child: Container(
-              width: 55,
-              height: 25,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: ColorManager.mainColor,
-              ),
-              child: Center(
-                child: Text(
-                  '\$100',
-                  style: mediumMontserratStyle(
-                      fontSize: FontSize.s10, color: ColorManager.white),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                child: Container(
+                  width: 55,
+                  height: 25,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: ColorManager.mainColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '\$100',
+                      style: mediumMontserratStyle(
+                          fontSize: FontSize.s10, color: ColorManager.white),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ],
       ),
